@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/css" href="xmlCss.css" ?><!--引用样式文件-->
+<books>
+    <book id="1">
+        <name>A</name>
+        <type>aaa</type>
+        <num>122</num>
+    </book>
+    <book id="2">
+        <name>B</name>
+        <type>bbb</type>
+        <num>222</num>
+    </book>
+
+    <!--CDATA区原样展示区域-->
+    <![CDATA[
+    if(a>b&&a<c){}
+    ]]>
+</books>

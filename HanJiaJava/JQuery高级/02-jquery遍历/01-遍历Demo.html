@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 1. jq对象.each(callback)</title>
+    <script src="../../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        /*
+        遍历
+            1. js的遍历方式
+             * for(初始化值;循环结束条件;步长)
+            2. jq的遍历方式
+                1. jq对象.each(callback)
+                2. $.each(object, [callback])
+                3. for..of:jquery 3.0 版本之后提供的方式
+        */
+        $(function () {
+            /*    1. js的遍历方式
+         * for(初始化值;循环结束条件;步长)*/
+            var citys = $("#city li");
+            /*
+             for (i = 0;i<=citys.length;i++){
+                 alert(i+":"+citys[i].innerHTML);
+             }*/
+
+            /*2. jq的遍历方式
+             1. jq对象.each(callback)
+             2. $.each(object, [callback])
+             3. for..of:jquery 3.0 版本之后提供的方式*/
+            /* citys.each(function () {
+                 //alert(this.innerHTML)//1. 使用js对象获取li对象，第一种方式,无参数
+                 alert($(this).html())//使用jq对象获取
+             })*/
+
+            citys.each(function (index, element) {//2.第二种方式，有参数
+                //alert(index+":"+element.innerHTML)
+                // alert(index+":"+$(element).html())
+
+                //判断是否为上海，若是，使用break或continue
+                if ("上海" == $(element).html()) {
+                    //return false;//相当于for循环中的break
+                    return true;//相当于for循环中的continue
+                }
+                alert(index + ":" + $(element).html())
+            })
+        })
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>
